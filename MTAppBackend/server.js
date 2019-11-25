@@ -18,12 +18,28 @@ function mtMiddleware(req, res, next) {
 	
 	// reqStr += "\nSearching for a bound hana container with tag: " + tagStr + "\n";
 	
-	var services = xsenv.getServices({
-		hana: { tag: tagStr }
-	});
+	try {
+		
+		try {
+
+			var services = xsenv.getServices({
+				hana: { tag: tagStr }
+			});
 	
+		} catch (error) {
+			
+			var services = xsenv.getServices({
+				hanatrial: { tag: tagStr }
+			});
+
+		}
+
+		req.tenantContainer = services.hana;
+		
+	} catch (error) {
+		
+	}
 	// If a container service binding was found
-	req.tenantContainer = services.hana;
 	// Else throw an error?  Not handled yet
 	//.catch(function (error) {
 	//	res.status(500).send(error.message);
