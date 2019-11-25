@@ -14,7 +14,6 @@ modules:
       app-name: MTAppBackend
       disk-quota: 256M
       memory: 256M
-      host: prov-multi-be
     requires:
       - name: MTAppUAA
       - name: hdi_db_client
@@ -33,7 +32,6 @@ modules:
       app-name: MTAppRouter
       disk-quota: 256M
       memory: 256M
-      host: prov-multi-ar
     requires:
       - name: MTAppUAA
       - name: MTAppBackend_api
