@@ -20,6 +20,17 @@ cf routes
 cf map-route MTAppRouter cfapps.eu10.hana.ondemand.com --hostname <subdomain>-trial-dev-mtapprouter
 cf delete-route cfapps.eu10.hana.ondemand.com --hostname <subdomain>-trial-dev-mtapprouter -f
 
+DELETE EVERYTHING IN SPACE BEFORE THIS DELETE UNSUBCRIBE ALL THE SUBSCRIBED CUSTOMER SUBACCOUNTS OTHERWISE THE
+SAAS SERVICE CANNOT BE DELETED ANYMORE!!!
+--------------------------------------------------------------------------------------------------------------
+date && cf delete master_db_v0 -f && cf delete client_db_v0 -f && cf delete MTAppBackend -f && cf delete MTAppRouter -f
+date && cf delete-service -f CLIENT_V0 && cf delete-service -f MASTER_V0 && cf delete-service MTAppUAA -f
+date && cf delete-route cfapps.eu10.hana.ondemand.com --hostname prov-multi-be-qas-mtappbackend -f && cf delete-route cfapps.eu10.hana.ondemand.com --hostname prov-multi-be-qas-mtapprouter -f
+
+DEPLOY MTA:
+----------
+date && cf deploy mta_archives/MTApp_0.0.2.mtar -e deploy_to_qa.mtaext && date
+
 ADD A SINGLE CUSTOMERB:
 ----------------------
 
