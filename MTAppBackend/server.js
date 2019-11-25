@@ -126,6 +126,15 @@ app.get("/get_legal_entity", function (req, res) {
 	});
 });
 
+app.get("/ping", function (req, res) {
+
+	var responseStr = "";
+	responseStr += "<!DOCTYPE HTML><html><head><title>MTApp</title></head><body><h1>MTApp</h1><h2>Welcome " + req.authInfo.userInfo.givenName + " " + req.authInfo.userInfo.familyName + "!</h2><p><b>Subdomain:</b> " + req.authInfo.subdomain + "</p><br />";
+	responseStr += "<p><b>Identity Zone:</b> " + req.authInfo.identityZone + "</p><p><b>Origin:</b> " + req.authInfo.origin + "</p>" + "<br /><br /><pre>" + "Hello, I'm there!!!" + "</pre>" + "</body></html>";
+	res.status(200).send(responseStr);
+	
+});
+
 app.get("/add_legal_entity", function (req, res) {
 	var reqStr = stringifyObj(req.authInfo.userInfo, {
 		indent: "   ",
