@@ -20,6 +20,18 @@ cf routes
 cf map-route MTAppRouter cfapps.eu10.hana.ondemand.com --hostname <subdomain>-trial-dev-mtapprouter
 cf delete-route cfapps.eu10.hana.ondemand.com --hostname <subdomain>-trial-dev-mtapprouter -f
 
+ADD A SINGLE CUSTOMERB:
+----------------------
+
+cf create-service hanatrial hdi-shared CUSTOMERB_V0 -t subdomain:'customerb' -c '{ "schema": "customerb_V0_DEV" }'
+cf bind-service client_db_v0 CUSTOMERB_V0
+cf set-env CLIENT_DB_V0 TARGET_CONTAINER 'CUSTOMERB_V0'
+cf start CLIENT_DB_V0
+cf stop CLIENT_DB_V0
+cf unbind-service client_db_v0 CUSTOMERB_V0
+cf bind-service MTAppBackend CUSTOMERB_V0
+cf map-route MTAppRouter cfapps.eu10.hana.ondemand.com --hostname customerb-dev-mtapprouter
+cf restage MTAppBackend
 
 REST API:
 --------
