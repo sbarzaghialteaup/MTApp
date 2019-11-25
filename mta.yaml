@@ -43,7 +43,7 @@ modules:
           url: '~{beurl}'
           forwardAuthToken: true
     properties:
-      TENANT_HOST_PATTERN: '^(.*)-ar.(.*)'
+      TENANT_HOST_PATTERN: '^(.*)-dev-mtapprouter.cfapps.eu10.hana.ondemand.com'
   - name: db_master
     type: hdb
     path: MTAppDB_Master
