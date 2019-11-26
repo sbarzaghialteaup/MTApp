@@ -70,6 +70,19 @@ modules:
         properties:
           key: POC_log-table-grantor
           service: '~{POC_MAST-table-grantor-service}'
+
+  - name: testhtml
+    type: html5
+    path: testhtml
+    parameters:
+       disk-quota: 256M
+       memory: 256M
+    build-parameters:
+       builder: grunt
+    requires:
+     - name: MTAppUAA
+     - name: dest_MTApp
+
 resources:
   - name: MTAppUAA
     parameters:
@@ -100,3 +113,10 @@ resources:
       POC_MAST-table-grantor-service: '${service-name}'
     parameters:
       service-name: MASTER_V0
+
+  - name: dest_MTApp
+    parameters:
+       service-plan: lite
+       service: destination
+    type: org.cloudfoundry.managed-service
+

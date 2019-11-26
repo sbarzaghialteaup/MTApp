@@ -27,8 +27,9 @@ date && cf delete master_db_v0 -f && cf delete client_db_v0 -f && cf delete MTAp
 date && cf delete-service -f CLIENT_V0 && cf delete-service -f MASTER_V0 && cf delete-service MTAppUAA -f
 date && cf delete-route cfapps.eu10.hana.ondemand.com --hostname prov-multi-be-qas-mtappbackend -f && cf delete-route cfapps.eu10.hana.ondemand.com --hostname prov-multi-be-qas-mtapprouter -f
 
-DEPLOY MTA:
+BUILD AND DEPLOY MTA:
 ----------
+date && mtb build && date
 date && cf deploy mta_archives/MTApp_0.0.2.mtar -e deploy_to_qa.mtaext && date
 
 ADD A SINGLE CUSTOMERB:
