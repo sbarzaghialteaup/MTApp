@@ -82,7 +82,9 @@ modules:
     requires:
      - name: MTAppUAA
      - name: dest_MTApp
-
+    properties:
+      TENANT_HOST_PATTERN: '^(.*)-dev-mtapprouter.cfapps.eu10.hana.ondemand.com'
+      
 resources:
   - name: MTAppUAA
     parameters:

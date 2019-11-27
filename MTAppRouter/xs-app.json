@@ -1,7 +1,12 @@
 {
 	"routes": [{
-		"source": "/",
+		"source": "/backend",
 		"target": "/",
 		"destination": "MTAppBackend_api"
-	}]
+	},{
+		"source": "/html",
+		"target": "/webapp",
+		"destination": "MTAppBackend_html"
+	}
+	]
 }

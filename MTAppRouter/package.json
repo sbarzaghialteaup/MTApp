@@ -1,5 +1,6 @@
 {
 	"name": "MTAppRouter",
+	"buildpack": "https://github.com/cloudfoundry/nodejs-buildpack",
 	"description": "Multitenant Business App - Router",
 	"version": "1.0.0",
 	"dependencies": {

@@ -11,6 +11,14 @@ modules:
    parameters:
      app-name: client_db_v0
      
+ - name: MTAppRouter
+   properties:
+     TENANT_HOST_PATTERN: '^(.*)-qas-mtapprouter.cfapps.eu10.hana.ondemand.com'
+
+ - name: testhtml
+   properties:
+     TENANT_HOST_PATTERN: '^(.*)-qas-mtapprouter.cfapps.eu10.hana.ondemand.com'
+
 resources:
  - name: hdi_db_master
    parameters:
