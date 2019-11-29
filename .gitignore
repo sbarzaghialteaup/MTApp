@@ -22,3 +22,5 @@ tmp/
 target/
 package-lock.json
 node_modules/
+.*/html5appdeployer/node_modules
+.MTAPortal_mta_build_tmp
