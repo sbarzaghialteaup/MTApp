@@ -1,0 +1,1 @@
+cf create-service html5-apps-repo app-host html5-repo -c app-host-config.json
