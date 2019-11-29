@@ -1,12 +1,15 @@
 {
-	"routes": [{
-		"source": "/backend",
-		"target": "/",
-		"destination": "MTAppBackend_api"
-	},{
-		"source": "/html",
-		"target": "/webapp",
-		"destination": "MTAppBackend_html"
-	}
+	"routes": [
+		{
+			"source": "/backend",
+			"target": "/",
+			"destination": "MTAppBackend_api"
+		},
+		{
+			"source": "^/html(/.*)",
+			"target": "$1",
+			"service": "html5-apps-repo-rt",
+			"authenticationType": "xsuaa"
+		}
 	]
 }
