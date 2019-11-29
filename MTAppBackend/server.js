@@ -135,6 +135,21 @@ app.get("/ping", function (req, res) {
 	
 });
 
+app.get("/getUser", function (req, res) {
+
+	var data = {
+		"givenName": req.authInfo.userInfo.givenName,
+		"familyName": req.authInfo.userInfo.familyName,
+		"subdomain": req.authInfo.subdomain,
+		"identityZone": req.authInfo.identityZone,
+		"origin": req.authInfo.origin
+	}
+	
+	res.status(200).send(JSON.stringify(data));
+	
+});
+
+
 app.get("/add_legal_entity", function (req, res) {
 	var reqStr = stringifyObj(req.authInfo.userInfo, {
 		indent: "   ",
