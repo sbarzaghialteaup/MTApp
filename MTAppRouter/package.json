@@ -1,15 +1,14 @@
 {
 	"name": "MTAppRouter",
-	"buildpack": "https://github.com/cloudfoundry/nodejs-buildpack",
 	"description": "Multitenant Business App - Router",
 	"version": "1.0.0",
 	"dependencies": {
-		"@sap/approuter": "~3.0.1"
+		"@sap/approuter": "6.0.0"
 	},
 	"scripts": {
 		"start": "node --inspect node_modules/@sap/approuter/approuter.js"
 	},
 	"engines": {
-		"node": "8.x"
+		"node": "^8.0.0"
 	}
 }
