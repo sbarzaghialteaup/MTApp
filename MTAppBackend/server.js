@@ -82,7 +82,7 @@ app.get("/", function (req, res) {
 	responseStr += "<a href=\"/get_legal_entity\">/get_legal_entity</a><br />";
 	var isAuthorized = req.authInfo.checkScope(req.authInfo.xsappname + '.create');
 	if (isAuthorized) {
-		responseStr += "<a href=\"/add_legal_entity\">/add_legal_entity</a><br />";
+		responseStr += "<a href=\"/backend/add_legal_entity\">/add_legal_entity</a><br />";
 	}
 	responseStr += "<p><b>Identity Zone:</b> " + req.authInfo.identityZone + "</p><p><b>Origin:</b> " + req.authInfo.origin + "</p>" + "<br /><br /><pre>" + reqStr + "</pre>" + "</body></html>";
 	res.status(200).send(responseStr);
