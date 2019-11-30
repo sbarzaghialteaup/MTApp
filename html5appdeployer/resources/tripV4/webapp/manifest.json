@@ -23,6 +23,18 @@
 		"sourceTemplate": {
 			"id": "sap.ui.ui5-template-plugin.3worklistodatav4",
 			"version": "1.48.6"
+		},
+		"crossNavigation": {
+			"inbounds": {
+				"intent1": {
+					"signature": {
+						"parameters": {},
+						"additionalParameters": "allowed"
+					},
+					"semanticObject": "portale",
+					"action": "display"
+				}
+			}
 		}
 	},
 	"sap.fiori": {
