@@ -82,9 +82,14 @@ cf unbind-service MTAppBackend MTAppRegistry
 cf delete-service MTAppRegistry -f
 cf undeploy MTApp --delete-services -f
 
-
 HTML5:
 -----
+
 cf create-service html5-apps-repo app-host test -c '{ "sizeLimit" : 1}'
 cf html5-push -n html5-repo
 cf html5-list -a MTAppRouter -u
+
+PORTALE:
+--------
+
+cf push launchpad-deployer --health-check-type none
