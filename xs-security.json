@@ -17,6 +17,10 @@
 		{
 			"name": "$XSAPPNAME.create",
 			"description": "Create data"
+		},
+		{
+			"name": "uaa.user",
+			"description": "UAA"
 		}
 
 	],
