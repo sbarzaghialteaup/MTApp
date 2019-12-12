@@ -39,6 +39,13 @@
 			"scope-references":  [ 
 				"$XSAPPNAME.view" 
 			]
-		}
+		},
+		{
+            "name": "Token_Exchange",
+            "description": "UAA",
+            "scope-references": [
+                "uaa.user"
+            ]
+        }
 	]
 }
