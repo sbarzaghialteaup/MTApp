@@ -2,11 +2,6 @@
   "authenticationMethod": "route",
   "routes": [
     {
-      "source": "^/Tripv4/(.*)$",
-      "target": "$1",
-      "destination": "Tripv4",
-      "csrfProtection": false
-    },
     {
       "source": "^(/.*)",
       "target": "$1",
