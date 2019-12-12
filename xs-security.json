@@ -1,5 +1,5 @@
 {
-	"xsappname": "MTAppQAS",
+	"xsappname": "MTApp",
 	"tenant-mode": "shared",
 	"description": "Multitenant Business App based on Node.js",
 	"scopes": [
