@@ -206,6 +206,20 @@ app.delete("/callback/v1.0/tenants/*", function (req, res) {
 	res.status(200).send("");
 });
 
+// dependency
+app.get("/callback/v1.0/dependencies", function (req, res) {
+
+	xsappnames = [];
+
+	xsappnames.push({"xsappname": "1ba797f1-b963-4a85-9d98-b988a3e82a80-clone!b30311|lps-registry-broker!b14" });
+	xsappnames.push({"xsappname": "MTApp!t30311"});
+	xsappnames.push({"xsappname": "b057f1d1-e143-48a4-afaa-cb44925d598b!b30311|html5-apps-repo-uaa!b1685"});
+	xsappnames.push({"xsappname": "52d23be4-95a7-4a4f-9324-f934faa677b0!b30311|html5-apps-repo-uaa!b1685"});
+	xsappnames.push({"xsappname": "c5a1a120-d42e-4af0-8ab7-61534271fb6e!b30311|portal-cf-service!b3664"});
+	
+	res.status(200).send(JSON.stringify(xsappnames));
+});
+
 var server = require("http").createServer();
 var port = process.env.PORT || 3000;
 

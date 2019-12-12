@@ -4,6 +4,7 @@
 	"description": "Multitenant Business App based on Node.js",
 	"category": "Partner Engineering Digital Enablement",
 	"appUrls": {
+		"getDependencies": "https://prov-multi-be-dev-mtapprouter.cfapps.eu10.hana.ondemand.com/callback/v1.0/dependencies",
 		"onSubscription": "https://prov-multi-be-dev-mtapprouter.cfapps.eu10.hana.ondemand.com/callback/v1.0/tenants/{tenantId}"
 	}
 }
